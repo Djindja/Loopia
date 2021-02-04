@@ -10,10 +10,6 @@
 
     <div class="container">
 
-        <div class="page-header">
-            <h1>Read a Record</h1>
-        </div>
-
         <?php
         $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
 
@@ -29,6 +25,7 @@
 
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
+            $id = $row['id'];
             $type = $row['type'];
             $name = $row['name'];
             $content = $row['content'];
@@ -40,6 +37,8 @@
         }
         ?>
 
+        <?php if($id !== null): ?>
+        <h1>Read Record</h1>
         <table class='table table-hover table-responsive table-bordered'>
             <tr>
                 <td>Type</td>
@@ -64,6 +63,12 @@
                 </td>
             </tr>
         </table>
+        <?php else :
+            header("HTTP/1.0 404 Not Found");
+            echo "<h1>404 Not Found</h1>";
+            echo "The page that you have requested could not be found.";
+            exit();
+        endif; ?>
 
     </div>
 

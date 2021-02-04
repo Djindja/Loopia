@@ -10,10 +10,6 @@
 
     <div class="container">
 
-        <div class="page-header">
-            <h1>Read a Zone</h1>
-        </div>
-
         <?php
         $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
 
@@ -38,6 +34,8 @@
         }
         ?>
 
+        <?php if($id !== null): ?>
+        <h1>Read Zone</h1>
         <table class='table table-hover table-responsive table-bordered'>
             <tr>
                 <td>Id</td>
@@ -50,10 +48,16 @@
             <tr>
                 <td></td>
                 <td>
-                    <a href='index.php' class='btn btn-danger'>Back to read records</a>
+                    <a href='index.php' class='btn btn-danger'>Back to read zones</a>
                 </td>
             </tr>
         </table>
+        <?php else :
+            header("HTTP/1.0 404 Not Found");
+            echo "<h1>404 Not Found</h1>";
+            echo "The page that you have requested could not be found.";
+            exit();
+        endif; ?>
 
     </div>
 
