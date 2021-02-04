@@ -1,14 +1,15 @@
 # Loopia
 List of all Zones
 
-Single Zone
-
+Get a Single Zone
+---------------------------------
+---------------------------------
 List of all Records
 
-Create Record
+Create new Record
 
 Update Record
 
 Delete Record
 
-Single Record
+Get a Single Record
