@@ -16,7 +16,7 @@
     <?php
     if($_POST){
 
-        include 'config/database.php';
+        include '../config/database.php';
 
         try{
             $query = "INSERT INTO recordA SET type=:type, name=:name, content=:content, ttl=:ttl";

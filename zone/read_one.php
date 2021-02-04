@@ -17,7 +17,7 @@
         <?php
         $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
 
-        include 'config/database.php';
+        include '../config/database.php';
 
         try {
             $query = "SELECT id, name FROM zone WHERE id = ? LIMIT 0,1";

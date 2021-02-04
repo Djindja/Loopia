@@ -1,3 +1,9 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -23,7 +29,7 @@
 
         <?php
 
-    include 'config/database.php';
+    include '../config/database.php';
 
     $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
@@ -95,7 +101,7 @@
         $total_rows = $row['total_rows'];
 
         $page_url="index.php?";
-        include_once "paging.php";
+        include_once "../paging.php";
     }
 
     else{
